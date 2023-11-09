@@ -1,34 +1,34 @@
--- CARLA 0.8.4 activating on a windows machine
+-- CARLA 0.8.4 activating on a Windows machine
 
-1. Create a conda environment with python 3.6.5 and activate it.
+1. Create a conda environment with Python 3.6.5 and activate it.
 	$ conda create -n carla_env python==3.6.5
 	$ conda activate
 
-2. Extract the CarlaUE4Windows.zip on a folder in your desired disk.
-   after the extraction the carla files will be in this path -> D:\Coursera\CarlaSimulator
+2. Extract the CarlaUE4Windows.zip to a folder in your desired disk.
+   after the extraction, the Carla files will be in this path -> D:\<installation_directory>\CarlaSimulator
 
-3. Now you should install python dependencies with the requirements.txt provided in the carla folder:
-	$ python -m pip install -r D:\Coursera\CarlaSimulator\requirements.txt --user
+3. Now you should install Python dependencies with the requirements.txt provided in the Carla folder:
+	$ python -m pip install -r D:\<installation_directory>\CarlaSimulator\requirements.txt --user
 
-4. You can test the CARLA without the python server using this commands:
+4. You can test the CARLA without the Python server using these commands:
 	$ D:
-	$ cd Coursera\CarlaSimulator
+	$ cd <installation_directory>\CarlaSimulator
 	$ CarlaUE4.exe -windowed -carla-no-networking
    
-   The default map loaded is ​Town01​.
-   Use the ​A​, ​S​, ​D​, and ​W​ keys to manually drive the vehicle around the map.
-   Use the ​Q​ key to toggle reverse and forward drive mode.
+   The default map loaded is ​Town01.
+   Use the ​A, ​S, ​D, and ​W​ keys to manually drive the vehicle around the map.
+   Use the ​Q​ key to toggle reverse and forward drive modes.
    Use the ​P​ key to toggle auto-pilot mode (this only works in maps with pre-defined roads,
     such as the ​Town01​ and ​Town02​ maps provided by CARLA)
    
    to load the Simulator with the Race Track Map you should use the following commands:
     $ D:
-	$ cd Coursera\CarlaSimulator
+	$ cd <installation_directory>\CarlaSimulator
 	$ CarlaUE4.exe /Game/Maps/RaceTrack -windowed -carla-no-networking
 	
    to load the Simulator with a Fixed Time-Step you should use the following commands:
     $ D:
-	$ cd Coursera\CarlaSimulator
+	$ cd <installation_directory>\CarlaSimulator
 	$ CarlaUE4.exe /Game/Maps/RaceTrack -windowed -carla-no-networking -benchmark -fps=20
 	
    to determine the quality level you can use the -quality-level=<level> flag which the <level> can be 
@@ -50,28 +50,28 @@
      inputs (like in the previous examples without ​-carla-server​ enabled). Try clicking on the
      pygame window​ and manually drive the vehicle around, then try to do the same for the simulator.
 	
-	CARLA Python clients can be found in ​C:\Coursera\CarlaSimulator\PythonClient​.
-	 CARLA by default provides ​several example clients​ in its website that are detailed in the link below.
+	CARLA Python clients can be found in ​C:\<installation_directory>\CarlaSimulator\PythonClient.
+	 CARLA by default provides ​several example clients​ on its website that are detailed in the link below.
 	 These example client scripts are useful for demonstrating various features that CARLA has to offer.
 	
-	for other useful helps please visit the vendor website:
+	for other useful help please visit the vendor's website:
 	 https://carla.readthedocs.io/en/0.8.4/connecting_the_client/
 	 
 6. How can you use another port for the server-client mode:
 	To use another port (besides the default port of 2000), use the argument
      -carla-world-port=N​ for the CARLA Simulator script and ​--port=N​ for the Python client.
-     Make sure to set the port number ​N​ to be the same for both the server and client.
+     Make sure to set the port number ​N​ to be the same for both the server and the client.
 	
 	Example:
 	 
-	 Server side:
+	 Server-side:
 	 
 	  $ D:
-	  $ cd Coursera\CarlaSimulator
-	  $ CarlaUE4.exe -carla-server -carla-world-port=2003
+	  $ cd <installation_directory>\CarlaSimulator
+	  $ CarlaUE4.exe -carla-server -Carla-world-port=2003
 	 
-	 Client side:
+	 Client-side:
 	  
 	  $ D:
-	  $ cd Coursera\CarlaSimulator\PythonClient
+	  $ cd <installation_directory>\CarlaSimulator\PythonClient
 	  $ python manual_control.py --port=2003
